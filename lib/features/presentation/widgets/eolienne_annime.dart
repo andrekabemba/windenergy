@@ -4,7 +4,7 @@ import 'package:windenergy/ui/couleurs.dart';
 
 class EolienneAnime extends StatefulWidget {
   final bool actif;
-  const EolienneAnime({super.key, this.actif = false});
+  const EolienneAnime({super.key, this.actif = true});
 
   @override
   State<EolienneAnime> createState() => _EolienneAnimeState();
@@ -43,24 +43,30 @@ class _EolienneAnimeState extends State<EolienneAnime>
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.fromLTRB(17, 30, 0, 0),
+          padding: EdgeInsets.fromLTRB(11, 19, 0, 0),
           child: SvgPicture.asset(
             "design/mat_eolienne.svg",
-            width: 11,
-            height: 28,
+            width: 7,
+            height: 14,
             colorFilter: ColorFilter.mode(couleurPrincipale, BlendMode.srcIn),
           ),
         ),
         RotationTransition(
           turns: _animation,
-          alignment: Alignment.center,
+          alignment: Alignment(0.05, 0.23),
           child: SvgPicture.asset(
-            "design/pales_eolienne.svg",
-            width: 45,
-            height: 45,
+            "design/pales_eolienne2.svg",
+            width: 24,
+            height: 24,
             colorFilter: ColorFilter.mode(couleurPrincipale, BlendMode.srcIn),
           ),
         ),
+        /*SvgPicture.asset(
+          "design/pales_eolienne2.svg",
+          width: 45,
+          height: 45,
+          colorFilter: ColorFilter.mode(couleurPrincipale, BlendMode.srcIn),
+        ),*/
       ],
     );
   }

@@ -1,18 +1,11 @@
 import 'package:windenergy/features/domain/entities/entities.dart';
 
 class UtilisateurModel extends Utilisateur {
-  const UtilisateurModel({
-    super.authId,
-    super.idUtilisateur,
-    super.email,
-    super.nom,
-    super.prenom,
-  });
+  const UtilisateurModel({super.id, super.email, super.nom, super.prenom});
 
   UtilisateurModel.fromJSON(Map<String, dynamic> json)
     : super(
-        authId: json["authId"]! as String,
-        idUtilisateur: json["idUtilisateur"]! as int,
+        id: json["id"]! as String,
         email: json["email"]! as String,
         nom: json["nom"]! as String,
         prenom: json["prenom"]! as String,
@@ -20,8 +13,7 @@ class UtilisateurModel extends Utilisateur {
 
   Map<String, dynamic> toJSON() {
     var ret = <String, dynamic>{};
-    ret["authId"] = authId;
-    ret["idUtilisateur"] = idUtilisateur;
+    ret["id"] = id;
     ret["email"] = email;
     ret["nom"] = nom;
     ret["prenom"] = prenom;
@@ -43,33 +35,33 @@ class EolienneModel extends Eolienne {
 
   EolienneModel.fromJSON(Map<String, dynamic> json)
     : super(
-        idUtilisateur: json["idUtilisateur"]! as int,
+        idUtilisateur: json["utilisateur_id"]! as String,
         actif: json["actif"]! as bool,
-        hashSecurite: json["hashSecurite"]! as String,
-        numeroSerie: json["numeroSerie"]! as String,
+        hashSecurite: json["hash_securite"]! as String,
+        numeroSerie: json["numero_serie"]! as String,
         orientation: json["orientation"]! as double,
-        puissanceGenere: json["puissanceGenere"]! as double,
-        tempsDerniereMesure: DateTime.fromMillisecondsSinceEpoch(
-          json["tempsDerniereMesure"]! as int,
+        puissanceGenere: json["puissance_genere"]! as double,
+        tempsDerniereMesure: DateTime.parse(
+          json["temps_derniere_mesure"]! as String,
         ),
-        vitesseRotation: json["vitesseRotation"]! as double,
+        vitesseRotation: json["vitesse_rotation"]! as double,
       );
 
   Map<String, dynamic> toJSON() {
-    var nouveauTemps = 0;
+    var nouveauTemps = DateTime(1970).toIso8601String();
     if (tempsDerniereMesure != null) {
-      nouveauTemps = tempsDerniereMesure!.millisecondsSinceEpoch;
+      nouveauTemps = tempsDerniereMesure!.toIso8601String();
     }
 
     return <String, dynamic>{
-      "idUtilisateur": idUtilisateur,
+      "utilisateur_id": idUtilisateur,
       "actif": actif,
-      "hashSecurite": hashSecurite,
-      "numeroSerie": numeroSerie,
+      "hash_securite": hashSecurite,
+      "numero_serie": numeroSerie,
       "orientation": orientation,
-      "puissanceGenere": puissanceGenere,
-      "tempsDerniereMesure": nouveauTemps,
-      "vitesseRotation":vitesseRotation
+      "puissance_genere": puissanceGenere,
+      "temps_derniere_mesure": nouveauTemps,
+      "vitesse_rotation": vitesseRotation,
     };
   }
 }

@@ -61,7 +61,7 @@ class SupabaseDatasource extends DatabaseDatasource {
   FutureResultat consulterEtatEolienne(String numeroSerie) async {
     try {
       var resultat = await client
-          .from('eoliennes')
+          .from('eoliennes_view')
           .select()
           .eq('numero_serie', numeroSerie);
       var eolienne = resultat[0];
@@ -76,7 +76,7 @@ class SupabaseDatasource extends DatabaseDatasource {
   @override
   FutureResultat consulterListeEoliennes() async {
     try {
-      var resultat = await client.from('eoliennes').select();
+      var resultat = await client.from('eoliennes_view').select();
       var eoliennes = List<EolienneModel>.empty(growable: true);
 
       for (var json in resultat) {

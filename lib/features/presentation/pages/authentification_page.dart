@@ -6,6 +6,8 @@ import 'package:windenergy/features/presentation/widgets/windenergy_textfield.da
 import 'package:windenergy/ui/couleurs.dart';
 
 class AuthentificationPage extends StatelessWidget {
+  const AuthentificationPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +42,10 @@ class AuthentificationPage extends StatelessWidget {
             SizedBox(height: 10),
             WindenergyTextField(hintText: "mot de passe", obscureText: true),
             SizedBox(height: 30),
-            WindenergyButton(libelle: "Se Connecter", onPressed: () {}),
+            WindenergyButton(libelle: "s'authentifier", onPressed: () {}),
             SizedBox(height: 20),
             Text(
-              "Vous n'avez pas de Compte?",
+              "Pas encore enregistré?",
               textAlign: TextAlign.center,
               style: GoogleFonts.inter(color: couleurPrincipale, fontSize: 14),
             ),
