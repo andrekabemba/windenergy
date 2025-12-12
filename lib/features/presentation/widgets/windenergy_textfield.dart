@@ -27,13 +27,15 @@ class WindenergyTextField extends StatelessWidget {
       obscureText: obscureText,
       controller: controller,
       decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
         filled: true,
         fillColor: enabled ? couleurFondSecondaire : Colors.grey[300],
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: couleurSecondaire),
         ),
         hintText: hintText,
+        labelText: labelText,
+        prefixIcon: prefixIcon,
         hintStyle: GoogleFonts.inter(color: couleurPrincipale, fontSize: 14),
       ),
     );
