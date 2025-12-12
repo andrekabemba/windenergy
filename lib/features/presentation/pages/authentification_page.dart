@@ -20,27 +20,18 @@ class AuthentificationPage extends StatelessWidget {
           children: [
             Logo(),
             SizedBox(height: 50),
-            Text(
-              "E-mail",
-              style: GoogleFonts.inter(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: couleurPrincipale,
-              ),
+            WindenergyTextField(
+              prefixIcon: Icon(Icons.email, color: couleurPrincipale),
+              hintText: "Veuillez entrer votre Email",
+              labelText: "Email",
             ),
-            SizedBox(height: 10),
-            WindenergyTextField(hintText: "email"),
             SizedBox(height: 20),
-            Text(
-              "Mot de passe",
-              style: GoogleFonts.inter(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: couleurPrincipale,
-              ),
+            WindenergyTextField(
+              prefixIcon: Icon(Icons.lock, color: couleurPrincipale),
+              hintText: "Veuillez entrer votre mot de passe",
+              labelText: "Mot de Passe",
+              obscureText: true,
             ),
-            SizedBox(height: 10),
-            WindenergyTextField(hintText: "mot de passe", obscureText: true),
             SizedBox(height: 30),
             WindenergyButton(libelle: "s'authentifier", onPressed: () {}),
             SizedBox(height: 20),
