@@ -19,36 +19,64 @@ class EnregistrerPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Logo(),
-            SizedBox(height: 50),
-            WindenergyTextField(
-              prefixIcon: Icon(Icons.email, color: couleurPrincipale),
-              hintText: "Veuillez entrer votre Email ici",
-              labelText: "Email",
+            SizedBox(height: 30),
+            Text(
+              "Email",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: couleurPrincipale,
+              ),
             ),
+            SizedBox(height: 10),
+            WindenergyTextField(hintText: "Veuillez entrer votre Email ici"),
             SizedBox(height: 20),
-            WindenergyTextField(
-              prefixIcon: Icon(Icons.person, color: couleurPrincipale),
-              hintText: "Veuillez entrer votre Nom ici",
-              labelText: "Nom",
+            Text(
+              "Nom",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: couleurPrincipale,
+              ),
             ),
+            WindenergyTextField(hintText: "Veuillez entrer votre Nom ici"),
             SizedBox(height: 20),
-            WindenergyTextField(
-              prefixIcon: Icon(Icons.person, color: couleurPrincipale),
-              hintText: "Veuillez entrer votre Prenom ici",
-              labelText: "Prenom",
+            Text(
+              "Prenom",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: couleurPrincipale,
+              ),
             ),
+            SizedBox(height: 10),
+            WindenergyTextField(hintText: "Veuillez entrer votre Prenom ici"),
             SizedBox(height: 20),
+            Text(
+              "Mot de passe",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: couleurPrincipale,
+              ),
+            ),
+            SizedBox(height: 10),
             WindenergyTextField(
-              prefixIcon: Icon(Icons.lock),
               hintText: "Veuillez entrer votre mot de passe",
-              labelText: "Mot de Passe",
               obscureText: true,
             ),
             SizedBox(height: 20),
+            Text(
+              "Confirmer mot de Passe",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: couleurPrincipale,
+              ),
+            ),
+            SizedBox(height: 10),
             WindenergyTextField(
-              prefixIcon: Icon(Icons.lock, color: couleurPrincipale),
               hintText: "Veuillez confirmer votre mot de passe",
-              labelText: "Confirmer mot de Passe",
               obscureText: true,
             ),
             SizedBox(height: 20),

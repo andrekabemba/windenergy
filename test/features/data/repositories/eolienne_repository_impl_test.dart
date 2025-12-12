@@ -31,7 +31,7 @@ void main() {
       final String numeroSerie = "";
       when(
         () => databaseDatasource.ajouterEolienne(numeroSerie),
-      ).thenThrow(ServerException(message:""));
+      ).thenThrow(ServerException(message: ""));
 
       final actual = await repositoryImpl.ajouterEolienne(numeroSerie);
 
